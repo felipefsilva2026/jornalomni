@@ -1,0 +1,93 @@
+:root {
+  --blue: #013188;
+  --blue-soft: #2453A9;
+  --orange: #E95814;
+  --orange-pale: #FDEBE3;
+  --ink: #3E4149;
+  --muted: #676D79;
+  --pale: #F0F0F2;
+  --line: #E1E2E4;
+  --white: #ffffff;
+  --danger: #C43B2C;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--blue) 0%, #021d5c 100%);
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  padding: 24px;
+}
+
+.lock-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  padding: 32px 28px;
+}
+
+.lock-logo svg { height: 32px; width: auto; display: block; margin: 0 auto 20px; }
+
+.lock-title { font-size: 18px; font-weight: 700; color: var(--blue); margin: 0 0 4px; text-align: center; }
+.lock-sub { font-size: 13px; color: var(--muted); margin: 0 0 24px; text-align: center; }
+
+.lock-field { margin-bottom: 14px; }
+.lock-field input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.lock-field input[type="password"]:focus { border-color: var(--blue-soft); }
+
+.lock-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.lock-btn:hover { opacity: 0.9; }
+.lock-btn-primary { background: var(--orange); color: var(--white); }
+.lock-btn-secondary { background: var(--pale); color: var(--blue); margin-top: 10px; }
+
+.lock-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.lock-divider::before, .lock-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.lock-status { font-size: 13px; text-align: center; margin-top: 14px; min-height: 18px; }
+.lock-status.error { color: var(--danger); font-weight: 600; }
+.lock-status.info { color: var(--blue-soft); }
+.lock-status.success { color: #1D8A4A; font-weight: 600; }
+
+.lock-video-wrap { display: none; margin-top: 14px; text-align: center; }
+.lock-video-wrap video {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--orange);
+  transform: scaleX(-1);
+  background: #000;
+}
+
+.lock-footer { margin-top: 20px; font-size: 11px; color: var(--muted); text-align: center; }
